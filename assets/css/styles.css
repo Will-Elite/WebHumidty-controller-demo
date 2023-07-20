@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+
+:root {
+    --gradient: linear-gradient( 135deg, #72edf2 10%, #5151e5 100%);
+}
+
+* {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    line-height: 1.25em;
+}
+
+.claer {
+    clear: both;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #343d4b;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.container {
+    border-radius: 25px;
+    -webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+    background-color: #222831;
+    color: #ffffff;
+    height: 500px;
+}
+
+.weather-side {
+    position: relative;
+    height: 100%;
+    border-radius: 25px;
+    /* background-image: url("https://images.careerbuilder.vn/employer_photo/264092/7_1658988513.jpg"); */
+    
+    width: 300px;background-image: url("./Image/EliteCard.png");
+    -webkit-box-shadow: 0 0 20px -10px rgba(0, 0, 0,0.2);
+            box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+    -webkit-transition: -webkit-transform 300ms ease;
+            transition: -webkit-transform 300ms ease;
+    -o-transition: transform 300ms ease;
+            transition: transform 300ms ease;
+            transition: transform 300ms ease, -webkit-transform 300ms ease;
+    -webkit-transform: translateZ(0) scale(1.02) perspective(1000px);
+            transform: translateZ(0) scale(1.02) perspective(1000px);
+    float: left;
+}
+
+.weather-side:hover {
+    -webkit-transform: scale(1.1) perspective(1500px) rotateY(10deg);
+            transform: scale(1.1) perspective(1500px) rotateY(10deg);
+}
+
+.weather-gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: var(--gradient);
+    border-radius: 25px;
+    opacity: 0.8;
+}
+
+.date-container {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+
+.date-dayname {
+    margin: 0;
+}
+
+.dateday-time {
+    display: block;
+    margin-top: 6px;
+}
+
+.date-day {
+    display: inline-block;
+    margin-top: 6px;
+}
+
+.date-timesecond {
+    display: inline-block;
+    margin-top: 6px;
+}
+
+.location {
+    display: inline-block;
+    margin-top: 10px;
+}
+.location-icon{
+    display: inline-block;
+}
+
+.location-icon svg {
+    display: inline;
+    height: 15px;
+    width: 16px;
+    margin-right: 5px;
+
+    /* display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+    background-image: url("./svg/map-pin.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center; */
+}
+
+.weather-container {
+    position: absolute;
+    top: 180px; 
+    left: 25px;
+}
+
+.weather-temp {
+    margin: 0;
+    font-weight: 700;
+    font-size: 4em;
+}
+
+.weather-desc {
+    margin: 0;
+}
+
+.today-info-container {
+    position: absolute;
+    bottom: 95px;
+    left: 5px;
+    float: left;
+    width: 100%;
+    
+     
+}
+
+.today-info {
+    margin-left: 20px;
+    position: absolute;
+}
+
+.weather-wind {
+    margin-top: 10px;
+}
+
+.value-weather-Humidity {
+    margin-left: 40px;
+}
+
+.value-weather-wind {
+    margin-left: 70px;
+}
+
+.srouce-weather-open {
+    position: absolute;
+    bottom: 7px;
+    left: 44px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.Controller-side {
+    position: relative;
+    float: left;
+	height: 100%;
+	padding-top: 10px;
+    margin-left: 10px;
+}
+
+.Controller-side h3 {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0be80f;
+    -webkit-transition: 0.4s;
+            transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+            transition: 0.4s;
+}
+
+input[type="checkbox"]:checked + .slider {
+    background-color: #2196f3;
+}
+
+input[type="checkbox"]:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+
+.Temperature-device {
+    display: inline-block;
+}
+
+.Humidity-device {
+    display: inline-block;
+    margin-left: 60px;
+}
+
+.Time-device {
+    display: block;
+}
+
+#datetimeDevice {
+    display: inline-block;
+}
+
+#datetime2 {
+    display: inline-block;
+    margin-left: 66px;
+}
+
+#switchText {
+    display: inline-block;
+}
+
+.button-text {
+    display: inline-block;
+}
+
+.button-status {
+    display: inline-block;
+}
+
+.input-value-container {
+    display: block;
+    position: relative;
+    height: 170px;
+    
+}
+
+.humidity-status-setting {
+    height: 25px;
+    position: absolute;
+    top: 10px;
+    color: white;
+}
+
+.input-label-setupSmall {
+    position: absolute;
+    top: 32px;
+}
+
+
+.input-label-setupBig {
+    position: absolute;
+    top: 85px;
+}
+
+.input-containerSmall {
+    position: absolute;
+    top: 52px;
+}
+
+.input-containerBig {
+    position: absolute;
+    top: 105px;
+}
+
+.Notification-valueSetup {
+    position: absolute;
+    bottom: 16px;
+}
+
+.Notification-localStorage {
+    position: relative;
+    
+}
+
+.small-localSotorage {
+    position: absolute;
+    top: 55px;
+    left: 150px;
+    width: 150px;
+}
+
+.big-localStorage {
+    position: absolute;
+    top: 107px;
+    left: 150px;
+}
+
+.input-imageLight {
+   display: block;
+   width: 100%;
+}
+
+.image-light-container {
+    display: block;
+    width: 250px;
+    height: 80px;
+
+}
+
+img.image-light {
+    width: 40px;
+    height: 50px;
+}
+
+.batteryLevel-status {
+    position: absolute;
+    bottom: 20px;
+    left: 170px;
+
+}
+
+.batteryLevel-Icon {
+    position: absolute;
+    bottom: 15px;
+    left: 260px;
+
+}
+
+@keyframes sprite {
+    0% {
+        background-position: 0 0%;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+.image-battery {
+    width: 27px;
+    height: 27px;
+    animation: sprite 3s steps(10) infinite; 
+    background: url(./Image/batt_critical.png) no-repeat 0 0%; 
+    
+}
+
+
+
+

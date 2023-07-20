@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humidity Elite</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    
+</head> 
+<body>
+    <div class="container">
+        <div class="weather-side">
+            <div class="weather-gradient"></div>
+            <div class="date-container">
+                <h2 class="date-dayname">Sunday</h2>
+                <div class="dateday-time">
+                    <span class="date-day">15 July 2023</span>
+                    <span class="date-timesecond">8:00</span>
+                </div>               
+                <div class="location-icon"><svg id="my-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg></div><span class="location">Long Thành</span>
+            </div>
+
+            <div class="weather-container">
+                <div class="weather-icon"></div>
+                <h1 class="weather-temp">20°C</h1>
+                <h3 class="weather-desc">Sunny</h3>
+            </div>
+            <div class="today-info-container">
+                <div class="today-info">
+                    <div class="weather-humidity"><span class="title">Humidity</span><span class="value-weather-Humidity">34 %</span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="weather-wind"><span class="title">Wind</span><span class="value-weather-wind">0 Km/h</span>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="srouce-weather-open">srouce: openweathermap.org</div>
+        </div>
+        <div class="Controller-side">
+            <h3>Kiểm soát độ ẩm khu CUT1B</h3>
+            <div class="Temperature-device" id="temperature">Nhiệt độ</div>
+            <div class="Humidity-device" id="humidity">Độ ẩm</div>
+            <div class="Time-device">
+                <div id="datetimeDevice">Thời gian: </div>
+                <div id="datetime2"></div>
+            </div>
+            <div class="switch-mode">
+                <div class="Auto-mode">
+                    <div class="switch-AutoManual">
+                        <div>Chọn chế độ</div>
+                        <label class="switch">
+                            <input type="checkbox" onchange="updateSwitchText(this)">
+                            
+                            
+                            <span class="slider round"></span>
+                        </label>
+                        <div id="switchText">Auto</div>
+                    </div>
+                </div>
+                <div class="Manual-mode">
+                    <div class="button-container">
+                        <div class="button-text">Nút nhấn :</div>   
+                        <div class="button-status">Trạng thái nút nhấn</div>  
+                        
+                        <div>Nút nhấn bật tắt thiết bị điện</div>
+                        <div class="Button-manual">
+                            <button id="onButton" onclick="sendRequest('ON')">ON</button>
+                            <button id="offButton" onclick="sendRequest('OFF')">OFF</button>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+            <div class="input-imageLight">
+                <div class="input-value-container">
+                    <div class="humidity-status-setting">Mời bạn nhập:</div>
+                    <div class="input-label-setupSmall">Cài đặt nhỏ hơn:</div>
+                    <div class="input-containerSmall">
+                        <input type="number" aria-label="import-number" id="smaller-input" min="0" max="100">
+                        <button onclick="updateHumiditySetting()">Cập nhật</button>
+                    </div>
+                    <div class="input-label-setupBig">Cài đặt lớn hơn:</div>
+                    <div class="input-containerBig">
+                        <input type="number" aria-label="import-number" id="bigger-input" min="0" max="100">
+                        <button onclick="updateHumiditySetting()">Cập nhật</button>
+                    </div>
+                    <div class="Notification-valueSetup">Hi</div>
+                    <div class="Notification-localStorage">
+                        <div class="small-localSotorage">Đã cài 1:</div>
+                        <div class="big-localStorage">Đã cài 2:</div>
+                    </div>
+                </div>
+                <div class="image-light-container">
+                    <div class="image-light-text">Trạng thái thiết bị tự động:</div>
+                    <img class="image-light" src="./assets/css/Image/pic_bulboff.gif" alt="Light-Image"> 
+                </div>
+            </div>
+            <div class="statusofdevice">Thiết bị phản hồi</div>
+            <div class="batteryLevel-status">Battery</div>
+            <div class="batteryLevel-Icon">
+                <img class="image-battery" src="./assets/css/Image/batt_critical.png" alt="Battery-Image">
+            </div>
+        </div>
+    </div>
+    <script src="./assets/script/scriptWeather.js"></script>
+    <script src="./assets/script/scriptControll.js"></script>
+    <script src="./assets/script/scriptUpdateWeather.js"></script>
+    
+</body>
+</html>
