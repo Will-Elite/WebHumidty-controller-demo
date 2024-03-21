@@ -84,13 +84,34 @@ function displayWeatherDevice () {
 
             var imageNumberBattery = document.querySelector(".image-battery");
             if (batteryLevelValue == 13) {
-                imageNumberBattery.style.background = "url(./assets/css/Image/batt_critical.png) no-repeat 0 0%";
-            } else if (batteryLevelValue == 2) {
-                imageNumberBattery.style.background = "url(./assets/css/Image/battLevel2.png)";
-                
-            }
-            
+                // Xóa thuộc tính "animation" hiện tại
+                 imageNumberBattery.style.removeProperty("animation");
 
+                 // Thêm thuộc tính "animation" mới với giá trị "sprite 3s steps(10) infinite"
+                 imageNumberBattery.style.animation = "sprite 3s steps(10) infinite";
+ 
+                // battery critical = pin cạn kiệt
+                imageNumberBattery.style.background = "url(./assets/css/Image/batt_critical.png) no-repeat 0 0%";  
+                
+            } else if (batteryLevelValue == 2) {
+                // battery Level 2
+                imageNumberBattery.style.background = "url(./assets/css/Image/battLevel2.png)";         
+            } else if (batteryLevelValue == 3) {
+                // battery Level 3
+                imageNumberBattery.style.background = "url(./assets/css/Image/battLevel2.png)";
+            } else if (batteryLevelValue == 4) {
+                // battery Level 4
+                imageNumberBattery.style.background = "url(./assets/css/Image/battLevel4.png)";
+            } else if (batteryLevelValue == 12  || batteryLevelValue == 5) {
+                // battery Level 12 full
+                imageNumberBattery.style.background = "url(./assets/css/Image/battLevel5.png)";
+            } else if (batteryLevelValue == 11) {
+                // Xóa thuộc tính "animation" hiện tại
+                imageNumberBattery.style.removeProperty("animation");
+                // Thêm thuộc tính "animation" mới với giá trị "sprite 3s steps(6) infinite"
+                imageNumberBattery.style.animation = "sprite 3s steps(6) infinite";
+                // battery Level 11 charge
+                imageNumberBattery.style.background = "url(./assets/css/Image/batt_charging.png) no-repeat 0 0%";
         }
         UpdateHumidityIcon(humidity);
     })
