@@ -19,8 +19,8 @@ function displayWeatherDevice () {
     .then(response => response.json())
     .then(dataWeatherDevice => {
         // Lấy GUID và MACAddress cần tìm
-        var GUID = "f7fb63d3-fb79-11ed-bebe-0a94be46f06a";
-        var MACAddress = "98:8B:AD:22:47:75"; //CUT1_B
+        var GUID = "ba12a005-fb7b-11ed-bebe-0a94be46f06a";
+        var MACAddress = "98:8B:AD:22:49:B9"; //FTYALine166
 
         //Tìm đối tượng JSON theo GUID và MACAdress
         var objectCut1B = dataWeatherDevice.find(item => item.GUID === GUID && item.MACAddress === MACAddress);
