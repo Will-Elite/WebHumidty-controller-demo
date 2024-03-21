@@ -112,8 +112,15 @@ function displayWeatherDevice () {
                 imageNumberBattery.style.animation = "sprite 3s steps(6) infinite";
                 // battery Level 11 charge
                 imageNumberBattery.style.background = "url(./assets/css/Image/batt_charging.png) no-repeat 0 0%";
+            }
         }
         UpdateHumidityIcon(humidity);
+         if (humidityFirst !== humiditySecond)
+        {
+            humiditySecond = humidityFirst;
+            UpdateHumidityIcon(humidity);
+           
+        }
     })
     .catch(error => {
         console.error('Lỗi:', error);
