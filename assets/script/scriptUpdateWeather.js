@@ -1,9 +1,9 @@
 // https://apiwww.easylogcloud.com//Users.svc/Favourites?APIToken=b87d29a5-e4f9-11ed-bebe-0a94be46f06a&userGUID=3b0a168a-0bea-11ee-bebe-0a94be46f06a&localTime=false
-
+//https://apiwww.easylogcloud.com/Users.svc/Favourites?APIToken=b87d29a5-e4f9-11ed-bebe-0a94be46f06a&userGUID=1e9d7262-d903-11ee-991b-0a94be46f06a&localTime=false
 function displayWeatherDevice () {
     const url = 'https://apiwww.easylogcloud.com//Users.svc/Favourites';
     const apiToken = 'b87d29a5-e4f9-11ed-bebe-0a94be46f06a';
-    const userGUID = '3b0a168a-0bea-11ee-bebe-0a94be46f06a';
+    const userGUID = '1e9d7262-d903-11ee-991b-0a94be46f06a';
     const localTime = false;
 
     const params = {
